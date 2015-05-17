@@ -1,0 +1,41 @@
+[user]
+	name = Chet Husk
+	email = chet_husk@volusion.com
+[core]
+	autocrlf = true
+	editor = 'C:/Program Files/Sublime Text 3/subl.exe' -n -w
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit
+	rh = reset --hard
+	co = checkout
+	st = status
+	s = status
+	clr = checkout -- .
+	com = checkout master
+	isin = !git merge-base --is-ancestor
+[color]
+	ui = auto
+[color "status"]
+	untracked = bold yellow
+	changed = bold yellow
+[merge]
+	tool = TortoiseMerge
+[difftool]
+	prompt = false
+[push]
+	default = simple
+[mergetool "tortoise"]
+	cmd = TortoiseMerge.exe -base: -theirs: -mine: -merged:
+[branch]
+	autosetupmerge = always
+	autosetuprebase = always
+[mergetool]
+	keepBackup = false
+[diff]
+	tool = vsdiffmerge
+[difftool "vsdiffmerge"]
+	cmd = \"C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Common7\\IDE\\vsdiffmerge.exe\" \"$LOCAL\" \"$REMOTE\" //t
+	keepbackup = false
+	trustexistcode = true
+[credential]
+	helper = !'C:\\Users\\chet_husk\\AppData\\Roaming\\GitCredStore\\git-credential-winstore.exe'
