@@ -11,13 +11,13 @@ Set-Alias such git
 # END ALIASES
 # PATH
 $env:path += ";" + (Get-Item "Env:ProgramFiles(x86)").Value + "\Git\bin"
-$env:path += ";C:\mongodb\bin;"
+$env:path += ";C:\code\global_configs\scripts;"
 # END PATH
 
 #GIT STUFF
 # MODULES
 if(Test-Path Function:\Prompt) {Rename-Item Function:\Prompt PrePoshGitPrompt -Force}
-. 'C:\tools\poshgit\dahlbyk-posh-git-9d95ed5\profile.example.ps1'
+. 'C:\tools\poshgit\dahlbyk-posh-git-f948f5a\profile.example.ps1'
 
 # customize colors for git since the blue background makes red hard to see
 # these set the prompt colors
