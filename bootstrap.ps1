@@ -14,6 +14,7 @@ choco install sublimetext3.packagecontrol
 choco install conemu
 
 # dev tools
+choco install atom
 choco install fiddler4
 choco install firefox-dev -pres
 choco install google-chrome-x64
@@ -26,4 +27,7 @@ choco install nugetpackageexplorer
 choco install robomongo
 choco install windirstat
 
-# WIP: VS 2013 and 2015
+choco install visualstudio2015enterprise -version 14.0.23107.0
+
+write-host "don't forget to create symlinks, and edit your PATH!"
+write-host "and also go get MongoChef!"
