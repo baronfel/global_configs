@@ -17,7 +17,7 @@ $env:path += ";C:\code\global_configs\scripts;"
 #GIT STUFF
 # MODULES
 if(Test-Path Function:\Prompt) {Rename-Item Function:\Prompt PrePoshGitPrompt -Force}
-. 'C:\tools\poshgit\dahlbyk-posh-git-f948f5a\profile.example.ps1'
+. 'C:\tools\poshgit\dahlbyk-posh-git-7acc70b\profile.example.ps1'
 
 # customize colors for git since the blue background makes red hard to see
 # these set the prompt colors
