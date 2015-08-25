@@ -1,6 +1,5 @@
 Push-Location (Split-Path -Path $MyInvocation.MyCommand.Definition -Parent)
 
-# END MODULES
 # ALIASES
 Set-Alias sublime "C:\Program Files\Sublime Text 3\sublime_text.exe"
 Set-Alias g git
@@ -8,11 +7,21 @@ Set-Alias many git
 Set-Alias much git
 Set-Alias such git
 
+function which($name)
+{
+    Get-Command $name | Select-Object -ExpandProperty Definition
+}
+
 # END ALIASES
+
+
 # PATH
-$env:path += ";" + (Get-Item "Env:ProgramFiles(x86)").Value + "\Git\bin"
+$env:path += ";" + (Get-Item "Env:ProgramFiles").Value + "\Git\bin;"
+$env:path += ";" + (Get-Item "Env:ProgramFiles").Value + "\Git\usr\bin;"
 $env:path += ";C:\code\global_configs\scripts;"
+$env:path += ";$env:MONGOPATH;"
 # END PATH
+
 
 #GIT STUFF
 # MODULES
@@ -23,8 +32,8 @@ if(Test-Path Function:\Prompt) {Rename-Item Function:\Prompt PrePoshGitPrompt -F
 # these set the prompt colors
 $GitPromptSettings.WorkingForegroundColor = [ConsoleColor]::Red
 $GitPromptSettings.UntrackedForeGroundColor = [ConsoleColor]::Red
-Enable-GitColors
 #END GIT STUFF
+
 # Set up a simple prompt, adding the git prompt parts inside git repos
 function global:prompt {
     $realLASTEXITCODE = $LASTEXITCODE
